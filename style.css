@@ -63,6 +63,7 @@
     font-size: 50px;
   }
   
+  
   /* ####### Responsive CSS ###### */
   @media only screen and (max-width: 768px) and (max-width: 991px){
     .carousel-caption{
@@ -70,6 +71,12 @@
     }
     .carousel-caption p{
         width: 100px;
+    }
+    .card{
+      margin-bottom: 30px;
+    }
+    .img-area img{
+      width: 100%;
     }
   }
 
@@ -90,6 +97,12 @@
         width: 100%;
         line-height: 1.6;
         font-size: 12px;
+    }
+    .about-text{
+      padding-top: 50px;
+    }
+    .card{
+      margin-bottom: 30px;
     }
   }
  
