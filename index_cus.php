@@ -1,9 +1,10 @@
 <?php
 require_once('config.php');
-if(!empty($_SESSION["id"])){
-    header("Location: #");
-  }
-if(isset($_POST["submit"])){
+//if(!empty($_SESSION["id"])){
+    //header("Location: #");
+  //}
+
+if(isset($_POST["register"])){
     $name = $_POST["name"];
     $phone = $_POST["phone"];
     $username = $_POST["username"];
@@ -11,11 +12,26 @@ if(isset($_POST["submit"])){
     $confirmpassword = $_POST["confirmpassword"];
 
     $errors = array();
+  if (empty($name)) {
+    $errors[] = "Name is required";
+  }
+  $errors = array();
+  if (empty($phone)) {
+    $errors[] = "Phone Number is required";
+  }
+  $errors = array();
   if (empty($username)) {
     $errors[] = "Username is required";
   }
+  $errors = array();
+  if (empty($password)) {
+    $errors[] = "Password is required";
+  }
+  if($password != $confirmpassword){
+    $errors[] = "Passwords do not match ";
+  }
   
-    $duplicate = mysqli_query($conn, "SELECT * FROM `customer_tbl` WHERE email = '$email' OR username ='$username'");
+    $duplicate = mysqli_query($conn, "SELECT * FROM `customer_tbl` WHERE username ='$username'");
     if(mysqli_num_rows($duplicate)>0){
         echo
         "<script> alert ('Username has already taken'); </script>";
@@ -29,7 +45,7 @@ if(isset($_POST["submit"])){
         }
         else{
             echo
-            "<script> alert ('Password does not matched'); </script>";
+            "<script> warrning alert ('Password does not matched'); </script>";
         }
     }
 }
@@ -52,10 +68,9 @@ if(isset($_POST["submit"])){
 
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="#">
+            <form action="index_cus.php" method="POST">
                 <h1>Create Account</h1>
 
-                
                 <div class="infield">
                     <input type="text" placeholder="Name" id = "name" required value="" />
                     <label></label>
@@ -65,7 +80,7 @@ if(isset($_POST["submit"])){
                     <label></label>
                 </div>
                 <div class="infield">
-                    <input type="text" placeholder="User Name" name="username" id=username required value="" />
+                    <input type="text" placeholder="Username" name="username" id=username required value="" />
                     <label></label>
                 </div>
                 <div class="infield">
@@ -76,11 +91,11 @@ if(isset($_POST["submit"])){
                     <input type="password" placeholder="Confirm Password" id=confirmpassword required value="" />
                     <label></label>
                 </div>
-                <button type ="submit" name ="submit">Sign Up</button>
+                <button type ="submit" name ="register">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form action="index_cus.php" method="POST">
                 <h1>Sign in</h1>
 
                 <div class="infield">
@@ -99,7 +114,7 @@ if(isset($_POST["submit"])){
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
                     <h1>Welcome Back!</h1>
-                    <p>To keep connected with us please login with your personal info</p>
+                    <p>To keep connected with us please login with your login info</p>
                     <button>Sign In</button>
                 </div>
                 <div class="overlay-panel overlay-right">

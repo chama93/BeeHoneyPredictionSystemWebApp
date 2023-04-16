@@ -1,0 +1,97 @@
+
+body {
+    font-family: 'Playfair Display', serif;
+    background-image: url(Images/bw.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: #333;
+    color: #fff;
+    padding: 0 20px;
+  }
+  
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-menu li {
+    margin-right: 20px;
+  }
+  
+  .nav-menu li:last-child {
+    margin-right: 0;
+  }
+  
+  .nav-menu li a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .welcome-message {
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .container {
+    max-width: 900px;
+  }
+  
+  .card {
+    height: 100%;
+  }
+  
+  .card-title {
+    font-size: 20px;
+  }
+  
+  .card-text {
+    font-size: 16px;
+  }
+  .card-body img {
+    max-width: 100%;
+    height: auto;
+  }
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .card-body {
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  
