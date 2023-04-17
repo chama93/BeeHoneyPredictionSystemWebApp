@@ -3,16 +3,16 @@ session_start();
 
 // Check if user is logged in
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
+    header("index.html");
     exit;
 }
 
 // Connect to database and retrieve user information
-// Replace with your own database details
+// Replace with database details
 $servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "database_name";
+$username = "root";
+$password = "";
+$dbname = "honeybeedb";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -23,16 +23,16 @@ if ($conn->connect_error) {
 }
 
 // Retrieve user information
-$user_id = $_SESSION["user_id"];
-$sql = "SELECT * FROM users WHERE id = $user_id";
+$user_name = $_SESSION["name"];
+$sql = "SELECT * FROM customer_tbl WHERE name = $user_name";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // User information found
     $row = $result->fetch_assoc();
     $username = $row["username"];
-    $email = $row["email"];
-    $profile_image = $row["profile_image"];
+    //$email = $row["email"];
+   // $profile_image = $row["profile_image"];
 } else {
     // User information not found
     echo "User information not found.";
@@ -55,7 +55,7 @@ $conn->close();
 				<li><a href="#">Home</a></li>
 				<li><a href="#">About</a></li>
 				<li><a href="#">Contact</a></li>
-				<li><a href="logout.php">Logout</a></li>
+				<li><a href="#">Logout</a></li>
 			</ul>
 		</nav>
 	</header>
