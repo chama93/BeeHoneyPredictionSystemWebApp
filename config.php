@@ -1,16 +1,17 @@
 <?php
-$servername ='localhost';
-$username = 'root';
-$password = '';
-$dbname = 'beehoneydb';
+    // DB connection parameters
+    $dbServer = "localhost";
+    $dbUser = "root";
+    $dbPass = "";
+    $database = "beehoneydb";
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Connect
+    $conn = mysqli_connect($dbServer, $dbUser, $dbPass, $database);
 
-// Check connection
-if ($conn) {
-  echo " Connection successfully";
-}else{
-  die(mysqli_error ($con));
-}
+    if(!$conn){
+
+        die("Connection Failed : ".mysqli_connect_error());
+    }else{
+        echo "success";
+    }
 ?>

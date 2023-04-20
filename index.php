@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,13 +25,13 @@
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 			  <li class="nav-item">
-				<a class="nav-link" href="#home">Home</a>
+				<a class="nav-link" href="./index.php">Home</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="#login">User Login</a>
+				<a class="nav-link" href="index_cus.php">User Login</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="#login">Admin Login</a>
+				<a class="nav-link" href="./login_admin.html">Admin Login</a>
 			  </li>
 			  <li class="nav-item">
 				<a class="nav-link" href="#about">About</a>

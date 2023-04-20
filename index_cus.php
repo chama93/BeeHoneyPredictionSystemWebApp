@@ -1,57 +1,8 @@
-
 <?php
-require_once('config.php');
-//if(!empty($_SESSION["id"])){
-    //header("Location: #");
-  //}
-
-if(isset($_POST["register"])){
-    $name = $_POST["name"];
-    $phone = $_POST["phone"];
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $confirmpassword = $_POST["confirmpassword"];
-
-    $errors = array();
-  if (empty($name)) {
-    $errors[] = "Name is required";
-  }
-  $errors = array();
-  if (empty($phone)) {
-    $errors[] = "Phone Number is required";
-  }
-  $errors = array();
-  if (empty($username)) {
-    $errors[] = "Username is required";
-  }
-  $errors = array();
-  if (empty($password)) {
-    $errors[] = "Password is required";
-  }
-  if($password != $confirmpassword){
-    $errors[] = "Passwords do not match ";
-  }
-  
-    $duplicate = mysqli_query($conn, "SELECT * FROM `user_tbl` WHERE username ='$username'");
-    if(mysqli_num_rows($duplicate)>0){
-        echo
-        "<script> alert ('Username has already taken'); </script>";
-    }
-    else{
-        if($password == $confirmpassword){
-         $query = "INSERT INTO user_tbl VALUES ('','$name','$phone','$username','$password')";
-         mysqli_query($conn,$query);   
-         echo
-         "<script> alert ('Registration Successfully!!!'); </script>";
-        }
-        else{
-            echo
-            "<script> warrning alert ('Password does not matched'); </script>";
-        }
-    }
+session_start();
+if(isset($_SESSION ["username"])){
+	header("location: ./cus_dashboard.php");
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,47 +15,51 @@ if(isset($_POST["register"])){
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css stylesheet -->
     <link rel="stylesheet" href="style_index_cus.css">
+    
 </head>
 <body>
-
+<!--- Register Form --->
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="index_cus.php" method="POST">
-                <h1>Create Account</h1>
 
+                <form action="registration.php" method="post">
+                <h1>Create Account</h1>
+                
                 <div class="infield">
-                    <input type="text" placeholder="Name" id = "name" required="required" autocomplete="off" />
+                    <input type="text" placeholder="Name" name="name" required="required" autocomplete="off" />
                     <label></label>
                 </div>
                 <div class="infield">
-                    <input type="tel" placeholder="Phone Number" name="phone" id=phone required="required" autocomplete="off"/>
+                    <input type="tel" placeholder="Phone Number" name="phone" required="required" autocomplete="off"/>
                     <label></label>
                 </div>
                 <div class="infield">
-                    <input type="text" placeholder="Username" name="username" id=username required ="required" autocomplete="off" />
+                    <input type="text" placeholder="Username" name="username" required ="required" autocomplete="off" />
                     <label></label>
                 </div>
                 <div class="infield">
-                    <input type="password" placeholder="Password" id=password required ="required" autocomplete="off" />
+                    <input type="password" placeholder="Password" name ="password" required ="required" autocomplete="off" />
                     <label></label>
                 </div>
                 <div class="infield">
-                    <input type="password" placeholder="Confirm Password" id=confirmpassword required ="required" autocomplete="off" />
+                    <input type="password" placeholder="Confirm Password" name ="confirmpassword" required ="required" autocomplete="off" />
                     <label></label>
                 </div>
+
                 <button type ="submit" name ="register">Register</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="index_cus.php" method="POST">
+            
+            <form action="./login.php" method="post">
                 <h1>Login</h1>
-
+                
                 <div class="infield">
-                    <input type="text" placeholder="Username" name="username" id=username required ="required" autocomplete="off"/>
+                    <input type="text" placeholder="Username" name="username" required ="required" autocomplete="off"/>
                     <label></label>
                 </div>
                 <div class="infield">
-                    <input type="password" placeholder="Password" id=password required ="required" autocomplete="off" />
+                    <input type="password" placeholder="Password" name="password" required ="required" autocomplete="off" />
                     <label></label>
                 </div>
                 <a href="#" class="forgot">Forgot your password?</a>
