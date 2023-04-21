@@ -56,30 +56,19 @@ function loginUser($conn,$username,$password){
             $_SESSION["phone"] = $row["phone"];
             $_SESSION["username"] = $row["username"];
 
-           }
-        else{
-            // Destroy cookies value
-            if(isset($_COOKIE["usernamecookie"])){
-                setcookie("usercookie", "", time() - (3600 * 24 * 7), "/");
-            }
-            if(isset($_COOKIE["passwordcookie"])){
-                setcookie("passwordcookie", "", time() - (3600 * 24 * 7), "/");
-            }
-        }
-            header("location: index_cus.php");
-        }  
-     else{
-            header("location: ../index.php?err=loginfailedpassword");
+            header("location:cus_dashboard.php");
+           } 
+           else{
+            header("location:index_cus.php?err=loginfailedpassword");
             exit();
-        }  
-    }
-    {
-        header("location: ../index.php?err=loginfailedusername");
+           } 
+     }
+     else{
+        header("location:index_cus.php?err=loginfailedusername");
         exit();
+     }
     }
     //close the statement
     mysqli_stmt_close($stmt);
 }
-    
-   
 ?>

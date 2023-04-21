@@ -1,9 +1,9 @@
-
 <?php
 session_start();
 require_once "./config.php";
-if(isset($_SESSION ["username"])){
-	header("location: ./index.php");
+//if not logged in
+if(!isset($_SESSION ["username"])){
+	header("location: ./index_cus.php");
 }
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ if(isset($_SESSION ["username"])){
 		</nav>
 	</header>
 	<main>
-		<h3>Welcome, <?php if(isset($_SESSION["username"])){echo $_SESSION["name"];}  ?></h3>
+		<h3>Welcome, <?php if(isset($_SESSION["username"])){echo $_SESSION["name"];}?></h3>
 		
 	</main>
 </body>

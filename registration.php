@@ -29,9 +29,6 @@ if (isset($_POST["register"])){
     else if(passwordNotMatch($password,$confirmpassword)){
         header("location: index_cus.php?err=different_password");
     }
-    //else if(usernameOrPhoneAvailable($conn,$username,$phone)){
-       // header("location: index_cus.php?err=available_usernameorphone");
-    //}
     else{
         //if all inputs are error free 
         registerNewUser($conn, $name,$phone,$username,$password,$confirmpassword);             
@@ -53,7 +50,6 @@ $passwordHashed = password_hash($password,PASSWORD_DEFAULT);
      //Bind the Statement with the query and check errors
      if(!mysqli_stmt_prepare($stmt,$sql)){
     header("location: index_cus.php?err=failedstmt?");
-
     }
     else{
          //bind data with the statement
