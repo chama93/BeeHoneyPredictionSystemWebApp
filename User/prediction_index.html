@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Beehive Prediction</title>
+    <link rel="stylesheet" href="prediction_index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      function submitForm(event) {
+        event.preventDefault();
+        const responseContainer = document.getElementById("prediction-result");
+        responseContainer.innerHTML = `<p>Predicting...</p>`;
+
+        const formData = {
+          Highest_Yeild_Month: document.getElementById("Highest_Yeild_Month")
+            .value,
+          Location: document.getElementById("Location").value,
+          NumHives: document.getElementById("NumHives").value,
+          Flowers: document.getElementById("Flowers").value,
+          HarvestFreq: document.getElementById("HarvestFreq").value,
+          Symptoms: document.getElementById("Symptoms").value,
+          DeadBees: document.getElementById("DeadBees").value,
+          InspectFreq: document.getElementById("InspectFreq").value,
+          ColonyChanges: document.getElementById("ColonyChanges").value,
+          TempRange: document.getElementById("TempRange").value,
+        };
+
+        console.log(formData);
+        fetch("http://localhost:4000/predict", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // display response below the form
+            console.log("----success---");
+            console.log(data);
+
+            responseContainer.innerHTML = `<p>Your predicted yield is ${data.prediction} (Pounds of honey per year).</p>`;
+            window.scrollTo(0, 1000);
+            // Swal.fire(
+            //   `Your predicted yield is ${data.prediction} (Pounds of honey per year).`
+            // );
+            Swal.fire({
+              title: "<strong>Prediction Success!</strong>",
+              icon: "success",
+              html: `Your predicted yield is ${data.prediction} (Pounds of honey per year).`,
+            });
+          })
+          .catch((error) => {
+            console.error("----error");
+            console.error(error);
+            alert("There is an error occured!");
+          });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="welcome-banner">
+      <h1>Welcome to Honey Bee Prediction</h1>
+      <p id="welcome-text">
+        Please fill out the form below to get your prediction
+      </p>
+    </div>
+    <br />
+    <div id="form-container">
+      <form id="prediction-form">
+        <label for="Highest_Yeild_Month">Highest Yeild Month:</label>
+        <select name="Highest_Yeild_Month" id="Highest_Yeild_Month">
+          <option value="January">January</option>
+          <option value="February">February</option>
+          <option value="March">March</option>
+          <option value="April">April</option>
+          <option value="May">May</option>
+          <option value="June">June</option>
+          <option value="July">July</option>
+          <option value="August">August</option>
+          <option value="September">September</option>
+          <option value="October">October</option>
+          <option value="November">November</option>
+          <option value="December">December</option>
+        </select>
+        <br />
+        <label for="Location">Location:</label>
+        <select name="Location" id="Location">
+          <option value="Uva Province">Uva Province</option>
+          <option value="Western Province">Western Province</option>
+          <option value="Central Province">Central Province</option>
+          <option value="Southern Province">Southern Province</option>
+          <option value="Northern Province">Northern Province</option>
+          <option value="Eastern Province">Eastern Province</option>
+          <option value="Sabaragamuwa Province">Sabaragamuwa Province</option>
+        </select>
+        <br />
+        <label for="NumHives">Number of Hives:</label>
+        <select name="NumHives" id="NumHives">
+          <option value="1-50">1-50</option>
+          <option value="51-100">51-100</option>
+          <option value="101-500">101-500</option>
+          <option value="501- 2000">501- 2000</option>
+          <option value="2000+">2000+</option>
+        </select>
+        <br />
+        <label for="Flowers">Type of Flowers:</label>
+        <select name="Flowers" id="Flowers">
+          <option value="Vegetables">Vegetables</option>
+          <option value="Sunflowers">Sunflowers</option>
+          <option value="Other">Other</option>
+        </select>
+        <br />
+        <label for="HarvestFreq">Harvest Frequency:</label>
+        <select name="HarvestFreq" id="HarvestFreq">
+          <option value="Once a Year">Once a Year</option>
+          <option value="Twice a Year">Twice a Year</option>
+          <option value="3 times a Year">Three Times a Year</option>
+        </select>
+        <br />
+        <label for="Symptoms">Symptoms:</label>
+        <select name="Symptoms" id="Symptoms">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+        <br />
+        <label for="DeadBees">Dead Bees:</label>
+        <select name="DeadBees" id="DeadBees">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+        <br />
+        <label for="InspectFreq">Inspection Frequency:</label>
+        <select name="InspectFreq" id="InspectFreq">
+          <option value="Every 2 Weeks">Every 2 Weeks</option>
+          <option value="Every 4 Weeks">Every 4 Weeks</option>
+          <option value="Other">Other</option>
+        </select>
+        <br />
+        <label for="ColonyChanges">Colony Changes:</label>
+        <select name="ColonyChanges" id="ColonyChanges">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+        <br />
+        <label for="TempRange">Temperature Range:</label>
+        <select name="TempRange" id="TempRange">
+          <option value="0 - 31">0-31</option>
+          <option value="32-100">32-100</option>
+          <option value="101-150">101-150</option>
+          <option value="160 +">160 +</option>
+        </select>
+        <br />
+        <button type="submit" onclick="submitForm(event)">
+          Get Prediction
+        </button>
+      </form>
+    </div>
+    <br />
+
+    <div id="result-container">
+      <h4>
+        Prediction Result:
+        <p id="prediction-result"></p>
+      </h4>
+    </div>
+  </body>
+</html>

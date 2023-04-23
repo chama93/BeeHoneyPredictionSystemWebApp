@@ -28,10 +28,10 @@
 				<a class="nav-link" href="./index.php">Home</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="./index_cus.php">User Login</a>
+				<a class="nav-link" href="./User/index_cus.php">User Login</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="./login_admin.html">Admin Login</a>
+				<a class="nav-link" href="./Admin/login_admin.html">Admin Login</a>
 			  </li>
 			  <li class="nav-item">
 				<a class="nav-link" href="#about">About</a>

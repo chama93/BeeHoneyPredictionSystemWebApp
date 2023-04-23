@@ -1,0 +1,17 @@
+#welcome-banner {
+  background-color: #ffca28;
+  color: #fff;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+}
+
+#frame {
+  max-height: 500px;
+}
+
+#prediction-result {
+  background-color: #f0a75e;
+  margin-left: 500px;
+  margin-right: 100px;
+}

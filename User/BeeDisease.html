@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bee Dsisease Prediction</title>
+    <link rel="stylesheet" href="BeeDisease.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      function preview() {
+        frame.src = URL.createObjectURL(event.target.files[0]);
+      }
+      function clearImage() {
+        document.getElementById("formFile").value = null;
+        document.getElementById("prediction-result").innerHTML = null;
+        frame.src = "";
+      }
+
+      function submitForm(event) {
+        const fileInput = document.getElementById("formFile");
+        const file = fileInput.files[0];
+
+        const responseContainer = document.getElementById("prediction-result");
+        responseContainer.innerHTML = `<p>Predicting...</p>`;
+
+        // create a new FormData object
+        const formData = new FormData();
+        formData.append("file", file);
+
+        fetch("http://localhost:4000/upload", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // display response below the form
+            console.log(data);
+
+            responseContainer.innerHTML = `<p>The bee has ${data.prediction}</p>`;
+            // window.scrollTo(0, 1000);
+
+            Swal.fire({
+              title: "<strong>Prediction Success!</strong>",
+              icon: "success",
+              html: `The bee has ${data.prediction}`,
+            });
+          })
+          .catch((error) => {
+            console.error(error);
+            alert("There is an error occured!");
+          });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="welcome-banner">
+      <h1>Honey Bee Disease Prediction</h1>
+    </div>
+    <br />
+
+    <div class="container col-md-6">
+      <div class="mb-5">
+        <label for="Image" class="form-label"
+          >Please select the bee image</label
+        >
+        <input
+          class="form-control"
+          type="file"
+          id="formFile"
+          onchange="preview()"
+        />
+        <div>
+          <button
+            type="submit"
+            class="btn btn btn-success mt-3"
+            onclick="submitForm()"
+          >
+            Get Prediction
+          </button>
+          <button onclick="clearImage()" class="btn btn-primary mt-3">
+            Clear Image
+          </button>
+        </div>
+      </div>
+      <img id="frame" src="" class="img-fluid" />
+    </div>
+    <br />
+    <div id="result-container">
+      <p id="prediction-result"></p>
+    </div>
+  </body>
+</html>

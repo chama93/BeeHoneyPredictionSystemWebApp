@@ -1,0 +1,79 @@
+/* CSS styling for the header */
+#welcome-banner {
+  background-color: #ffca28;
+  color: #fff;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+}
+
+#welcome-text {
+  color: rgb(5, 23, 123);
+}
+
+/* CSS styling for the form */
+#form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+#prediction-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#prediction-form select {
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+#prediction-form button[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+#prediction-form button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+#prediction-result {
+  background-color: #f0a75e;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
