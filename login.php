@@ -55,7 +55,8 @@ function loginUser($conn,$username,$password){
             $_SESSION["name"] = $row["name"];
             $_SESSION["phone"] = $row["phone"];
             $_SESSION["username"] = $row["username"];
-
+            header("location:index_cus.php?err=loginfailedpassword2");
+            sleep(5);
             header("location:cus_dashboard.php");
            } 
            else{

@@ -197,6 +197,7 @@ p{
     z-index: 5;
     animation: show 0.6s;
 }
+
 @keyframes show{
     0%, 50% {
         opacity: 0;

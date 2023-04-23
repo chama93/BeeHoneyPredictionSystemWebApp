@@ -4,7 +4,7 @@ require_once "./config.php";
 if(isset($_POST['updateid'])){
    $user_id =$_POST['updateid'];
 
-   $sql = "SELECT * FROM 'user_tbl' WHERE id=user_id";
+   $sql = "SELECT * FROM user_tbl WHERE id= $user_id";
    $result=mysqli_query($conn,$sql);
    $response=array();
    while ($row=mysqli_fetch_assoc($result)){

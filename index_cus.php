@@ -13,7 +13,7 @@ if(isset($_SESSION ["username"])){
     <title>Login to Bee Honey - BeeHoney </title>
      <!-- font awesome icons -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- css stylesheet -->
+     <!-- css stylesheet -->
     <link rel="stylesheet" href="style_index_cus.css">
     
 </head>
@@ -23,13 +23,67 @@ if(isset($_SESSION ["username"])){
     if(isset($_GET["err"])){
         //Both forms related messages
         if($_GET["err"]==="empty_inputs"){
-            echo "<p class="alert alert-danger" role="alert;">
+            echo "<p style='padding: 15px; border: 1px solid transparent; 
+            border-radius: 4px;
+             color: #000000; background-color: #F08080;
+              border-color: #CD5C5C;'> 
             All the input fields must be filled!
-          </p>"
+          </p>";
         }
-        else if(){
+        else if($_GET["err"] ==="invalid_phone"){
+            echo "<p style='padding: 15px; border: 1px solid transparent; 
+            border-radius: 4px;
+             color: #000000; background-color: #F08080;
+              border-color: #CD5C5C;'>Mobile Number must be 10 numbers !</p";
+        }
+        else if($_GET["err"] === "invalid_password"){
+            echo "<p style='padding: 15px; border: 1px solid transparent; 
+            border-radius: 4px;
+             color: #000000; background-color: #F08080;
+              border-color: #CD5C5C;'>Password must be at least 5 characters long!</p>";
+        }
+        else if($_GET["err"] === "different_password"){
+            echo "<p style='padding: 15px; border: 1px solid transparent; 
+            border-radius: 4px;
+             color: #000000; background-color: #F08080;
+              border-color: #CD5C5C;'>Both passwords must be matched!</p>";
+        }
+        else if($_GET["err"] === "failedstmt?"){
+            echo "<p style='padding: 15px; border: 1px solid transparent; 
+            border-radius: 4px;
+             color: #000000; background-color: #F08080;
+              border-color: #CD5C5C;'>Failed to execute the query!</p>";
+        }
 
+         // Register form related message
+         else if($_GET["err"] === "noerrors"){
+            echo "<p style='padding: 15px; border: 1px solid transparent; 
+            border-radius: 4px;
+             color: #000000; background-color: #F08080;
+              border-color: #CD5C5C;'>Successfully registered!</p>";
         }
+
+        // Login form related message
+        else if($_GET["err"] === "loginfailedusername"){
+            echo "<p style='padding: 15px; border: 1px solid transparent; 
+            border-radius: 4px; color: #000000; 
+            background-color: #F08080; 
+            border-color: #CD5C5C;'> 
+            Wrong username, please enter the correct username!</p>";
+        }
+        else if($_GET["err"] === "loginfailedpassword"){
+            echo "<p style='padding: 15px; border: 1px solid transparent; 
+            border-radius: 4px; color: #000000; background-color: #F08080; border-color: #CD5C5C;'>
+            Wrong password, please enter the correct password!</p>";
+        }
+        else if($_GET["err"] === "loginfailedpassword2"){
+            echo "<p style='padding: 15px; border: 1px solid transparent; 
+            border-radius: 4px; color: #000000; background-color: #F08080; border-color: #CD5C5C;'>
+            successfully password, please enter the correct password!</p>";
+        }
+        else {
+            echo "login success";
+        };
     }
     ?>
 <!--- Register Form --->
@@ -114,7 +168,7 @@ if(isset($_SESSION ["username"])){
 
 
     </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 

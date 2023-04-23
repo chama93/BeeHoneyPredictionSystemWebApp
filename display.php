@@ -28,7 +28,7 @@ if (isset($_POST['displaySend'])){
         <td>'.$username.'</td>
         <td>'.$password.'</td>
         <td>
-        <button class="btn btn-blue" 
+        <button class="btn btn-success" 
         onclick="GetDetails('.$id.')"> Update </button>
         <button class="btn btn-danger" 
         onclick="DeleteUser('.$id.')"> Delete </button>

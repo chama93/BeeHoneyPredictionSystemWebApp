@@ -18,16 +18,19 @@ if (isset($_POST["register"])){
     //input validation 
     if(inputsEmptyRegister($name,$phone,$username,$password,$confirmpassword)){
         header("location: index_cus.php?err=empty_inputs");
-        //exit();
+        exit();
     }
     else if(phoneInvalid($phone)){
         header("location: index_cus.php?err=invalid_phone");
+        exit();
     }
     else if(passwordInvalid($password)){
         header("location: index_cus.php?err=invalid_password");
+        exit();
     }
     else if(passwordNotMatch($password,$confirmpassword)){
         header("location: index_cus.php?err=different_password");
+        exit();
     }
     else{
         //if all inputs are error free 
