@@ -7,9 +7,9 @@
 }
 
 :root {
-    --linear-grad: linear-gradient(to right, #141E30, #243B55);
-    --grad-clr1: #141430;
-    --grad-clr2: #2d2455;
+    --linear-grad: linear-gradient(to right, #e2d406, #ebe045);
+    --grad-clr1: #2e3014;
+    --grad-clr2: #af9919;
 }
 
 body {
@@ -221,4 +221,5 @@ p{
     100% {
         width:143.67px;
     }
+
 }
