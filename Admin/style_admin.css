@@ -11,7 +11,7 @@ a:hover {
 .myform-area {
   overflow: hidden;
   padding: 60px 0;
-  background: #f4fffe;
+  background: #fdf07c;
   position: relative;
   padding-top: 100px;
  
@@ -68,7 +68,7 @@ a:hover {
 
 .myform-area .form-area .form-input h2 {
   margin-bottom: 20px;
-  color: #07315b;
+  color: #fbfbfc;
 }
 
 .myform-area .form-area .form-input input {
