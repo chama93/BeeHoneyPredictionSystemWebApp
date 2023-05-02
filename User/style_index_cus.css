@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 * {
+    font-family: 'Playfair Display', serif;
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
 }
 
 :root {
-    --linear-grad: linear-gradient(to right, #e2d406, #ebe045);
+    --linear-grad: linear-gradient(to right, #cabe0d, #cabe0d);
     --grad-clr1: #2e3014;
     --grad-clr2: #af9919;
 }
@@ -19,30 +18,35 @@ body {
     place-content: center;
     font-family: 'Poppins', sans-serif;
 }
-.container{
-  position: relative;
-  width: 850px;
-  height: 500px;
-  background-color: #fff;
-  box-shadow: 25px 30px 55px #5557;
-  border-radius: 13px;
-  overflow: hidden;  
+
+.container {
+    position: relative;
+    width: 850px;
+    height: 500px;
+    background-color: #fff;
+    box-shadow: 25px 30px 55px #5557;
+    border-radius: 13px;
+    overflow: hidden;
 }
-.form-container{
+
+.form-container {
     position: absolute;
     width: 60%;
     height: 100%;
     padding: 0px 40px;
     transition: all 0.6s ease-in-out;
 }
-.sign-up-container{
+
+.sign-up-container {
     opacity: 0;
     z-index: 1;
 }
-.sign-in-container{
+
+.sign-in-container {
     z-index: 2;
 }
-form{
+
+form {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -50,25 +54,30 @@ form{
     justify-content: center;
     padding: 0px 50px;
 }
-h1{
-   color: var(--grad-clr1); 
+
+h1 {
+    color: var(--grad-clr1);
 }
-span{
+
+span {
     font-size: 12px;
 }
-.infield{
+
+.infield {
     position: relative;
     margin: 8px 0px;
     width: 100%;
 }
-input{
+
+input {
     width: 100%;
     padding: 12px 15px;
     background-color: #f3f3f3;
     border: none;
     outline: none;
 }
-label{
+
+label {
     position: absolute;
     left: 50%;
     top: 100%;
@@ -78,20 +87,24 @@ label{
     background: var(--linear-grad);
     transition: 0.3s;
 }
-input:focus ~ label {
+
+input:focus~label {
     width: 100%;
 }
-a{
+
+a {
     color: #333;
     font-size: 14px;
     text-decoration: none;
     margin: 15px 0px;
 }
-a.forgot{
+
+a.forgot {
     padding-bottom: 3px;
     border-bottom: 2px solid #EEE;
 }
-button{
+
+button {
     border-radius: 20px;
     border: 1px solid var(--grad-clr1);
     background: var(--grad-clr2);
@@ -102,15 +115,18 @@ button{
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-.form-container button{
+
+.form-container button {
     margin: 17px;
     transition: 80ms ease-in;
 }
-.form-container button:hover{
-    background:#fff;
+
+.form-container button:hover {
+    background: #fff;
     color: var(--grad-clr1);
 }
-.overlay-container{
+
+.overlay-container {
     position: absolute;
     top: 0;
     left: 60%;
@@ -120,7 +136,8 @@ button{
     transition: transform 0.6s ease-in-out;
     z-index: 9;
 }
-#overlayBtn{
+
+#overlayBtn {
     cursor: pointer;
     position: absolute;
     left: 50%;
@@ -132,16 +149,18 @@ button{
     background: transparent;
     border-radius: 20px;
 }
-.overlay{
+
+.overlay {
     position: relative;
-    background:var(--linear-grad);
+    background: var(--linear-grad);
     color: #FFF;
     left: -150%;
     height: 100%;
     width: 250%;
     transition: transform 0.6s ease-in-out;
 }
-.overlay-panel{
+
+.overlay-panel {
     position: absolute;
     display: flex;
     align-items: center;
@@ -153,73 +172,92 @@ button{
     width: 340px;
     transition: 0.6s ease-in-out;
 }
-.overlay-left{
-    right:60%;
+
+.overlay-left {
+    right: 60%;
     transform: translateX(-12%);
 }
-.overlay-right{
+
+.overlay-right {
     right: 0;
     transform: translateX(0%);
 }
-.overlay-panel h1{
+
+.overlay-panel h1 {
     color: #FFF;
 }
-p{
+
+p {
     font-size: 14px;
     font-weight: 300;
     line-height: 20px;
     letter-spacing: 0.5px;
     margin: 25px 0px 35px;
 }
-.overlay-panel button{
+
+.overlay-panel button {
     border: none;
     background-color: transparent;
 }
-.right-panel-active .overlay-container{
+
+.right-panel-active .overlay-container {
     transform: translateX(-150%);
 }
-.right-panel-active .overlay{
+
+.right-panel-active .overlay {
     transform: translateX(50%);
 }
-.right-panel-active .overlay-left{
+
+.right-panel-active .overlay-left {
     transform: translateX(25%);
 }
-.right-panel-active .overlay-right{
+
+.right-panel-active .overlay-right {
     transform: translateX(35%);
 }
-.right-panel-active .sign-in-container{
+
+.right-panel-active .sign-in-container {
     transform: translateX(20%);
     opacity: 0;
 }
-.right-panel-active .sign-up-container{
+
+.right-panel-active .sign-up-container {
     transform: translateX(66.7%);
     opacity: 1;
     z-index: 5;
     animation: show 0.6s;
 }
 
-@keyframes show{
-    0%, 50% {
+@keyframes show {
+
+    0%,
+    50% {
         opacity: 0;
         z-index: 1;
     }
-    50.1%,100%{
+
+    50.1%,
+    100% {
         opacity: 1;
         z-index: 5;
-    }   
+    }
 }
-.btnScaled{
+
+.btnScaled {
     animation: scaleBtn 0.6s;
 }
-@keyframes scaleBtn{
+
+@keyframes scaleBtn {
     0% {
         width: 143.67px;
     }
+
     50% {
         width: 250px;
     }
+
     100% {
-        width:143.67px;
+        width: 143.67px;
     }
 
 }

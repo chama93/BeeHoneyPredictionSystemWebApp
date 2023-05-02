@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Home</title>
+	<title>Home - BeeHoney </title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Playfair+Display&family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,10 +28,10 @@
 				<a class="nav-link" href="./index.php">Home</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="./User/index_cus.php">User Login</a>
+				<a class="nav-link" href="http://localhost/BeeHoneyPredictionSystemWebApp/User/index_cus.php">User Login</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="./Admin/login_admin.html">Admin Login</a>
+				<a class="nav-link" href="http://localhost/BeeHoneyPredictionSystemWebApp/Admin/login_admin.html">Admin Login</a>
 			  </li>
 			  <li class="nav-item">
 				<a class="nav-link" href="#about">About</a>
@@ -215,7 +215,7 @@
 	  <footer class="bg-dark p-2 text-center">
 		<div class="container">
 			<div class="text-white mb-3 mb-md-0">
-                Copyright © HoneyBee 2023. All rights reserved. Developed by Chamali Senanayake
+                Copyright©HoneyBee 2023. All rights reserved. Developed by Chamali Senanayake
               </div>
 		</div>
 	  </footer>

@@ -1,6 +1,6 @@
 body {
   font-family: 'Playfair Display', serif;
-  background-image: url(#);
+  background-image: url(images/bg1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -10,7 +10,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  background-color: #333;
+  background-color: #e7cc53;
   color: #fff;
   padding: 0 20px;
 }
@@ -27,7 +27,7 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  background-color: #111;
+  background-color: #111111;
 }
 
 .nav-menu {
@@ -111,4 +111,13 @@ body {
 
 .card-body {
   animation: fadeInUp 1s ease-out;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #343a40;
+  color: #fff;
+  padding: 10px;
 }

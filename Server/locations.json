@@ -1,7 +1,7 @@
 {
   "locations": [
     {
-      "name": "Western Province - 5%",
+      "name": "Western Province - 17.38%",
       "latitude": 6.9329,
       "longitude": 79.8578,
       "color": 5,
@@ -16,7 +16,7 @@
       ]
     },
     {
-      "name": "Central Province - 20%",
+      "name": "Central Province - 8.52%",
       "latitude": 7.2906,
       "longitude": 80.6337,
       "color": 8,
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "name": "Uva Province - 4%",
+      "name": "Uva Province - 27.87%",
       "color": 3,
       "coordinates": [
         { "lat": 7.6822, "lng": 80.9936 },
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "name": "Eastern Province - 8%",
+      "name": "Eastern Province - 6.56%",
       "color": 4,
       "coordinates": [
         { "lat": 8.9678, "lng": 80.9703 },
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "name": "North Central Province - 22%",
+      "name": "North Central Province - 6.56%",
       "color": 6,
       "coordinates": [
         { "lat": 8.9188, "lng": 80.7601 },
@@ -82,6 +82,24 @@
         { "lat": 8.5499, "lng": 80.3366 },
         { "lat": 8.7982, "lng": 80.6519 },
         { "lat": 8.896, "lng": 80.7051 }
+      ]
+    },
+    {
+      "name": "Southern Province - 11.80%",
+      "color": 2,
+      "coordinates": [
+        { "lat": 6.4095, "lng": 79.9918 },
+        { "lat": 6.3797, "lng": 80.2868 },
+        { "lat": 6.3499, "lng": 80.6597 },
+        { "lat": 6.2353, "lng": 80.9473 },
+        { "lat": 6.3663, "lng": 81.2737 },
+        { "lat": 6.5776, "lng": 81.6092 },
+        { "lat": 6.5121, "lng": 81.705 },
+        { "lat": 6.1832, "lng": 81.2438 },
+        { "lat": 5.9971, "lng": 80.7376 },
+        { "lat": 5.9122, "lng": 80.5908 },
+        { "lat": 6.0626, "lng": 80.173 },
+        { "lat": 6.2174, "lng": 80.0577 }
       ]
     }
   ]

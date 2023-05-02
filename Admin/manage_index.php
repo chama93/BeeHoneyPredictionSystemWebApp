@@ -2,10 +2,14 @@
 <html lang="en">
 
 <head>
+  <title> Manage Users - BeeHoney </title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Playfair+Display&family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <!--Bootstrap CSS -->
@@ -16,6 +20,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -206,5 +211,14 @@
   </script>
 
 </body>
+<footer class="bg-dark p-2 text-center">
+  <div class="container">
+    <div class="text-white mb-3 mb-md-0">
+      Copyright©HoneyBee 2023. All rights reserved. Developed by Chamali
+      Senanayake
+    </div>
+
+  </div>
+</footer>
 
 </html>

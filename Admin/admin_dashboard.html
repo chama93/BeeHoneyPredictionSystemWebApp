@@ -2,13 +2,7 @@
 <html>
 
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Playfair+Display&family=Roboto+Mono:wght@100&display=swap"
-    rel="stylesheet">
- 
-  <title>Admin Dashboard</title>
+  <title>Admin Dashboard - BeeHoney</title>
   <script>
     function googleMap() {
       window.location.href = "google_map.html";
@@ -48,8 +42,8 @@
       </div>
       <ul class="nav-menu">
         <li><a href="./admin_dashboard.html">Dashboard</a></li>
-        <li><a href="./index.php">Home</a></li>
-        <li><a href="./index.php">Logout</a></li>
+        <li><a href="http://localhost/BeeHoneyPredictionSystemWebApp/index.php">Home</a></li>
+        <li><a href="http://localhost/BeeHoneyPredictionSystemWebApp/index.php">Logout</a></li>
       </ul>
     </div>
   </nav>
@@ -62,7 +56,8 @@
             <img class="card-body-image" src="Images/6.jpg">
             <h5 class="card-title">Users</h5>
             <p class="card-text">View and manage users</p>
-            <a href="http://localhost/BeeHoneyPredictionNew/Admin/manage_index.php" class="btn btn-primary">Go to Users</a>
+            <a href="http://localhost/BeeHoneyPredictionSystemWebApp/Admin/manage_index.php" class="btn btn-primary">
+              Manage</a>
           </div>
         </div>
       </div>
@@ -71,8 +66,8 @@
           <div class="card-body">
             <img class="card-body-image" src="Images/7.jpg">
             <h5 class="card-title">Report</h5>
-            <p class="card-text">View and download report</p>
-            <button type="button" class="btn btn-primary" onclick="dataPDF()">Go to Report</button>
+            <p class="card-text">Report of farmer's details</p>
+            <button type="button" class="btn btn-primary" onclick="dataPDF()">Download</button>
           </div>
         </div>
       </div>
@@ -81,9 +76,9 @@
           <div class="card-body">
             <img class="card-body-image" src="Images/8.jpg">
             <h5 class="card-title">Google Map</h5>
-            <p class="card-text">View google Map</p>
-            <button type="button" class="btn btn-primary" onclick="googleMap()">Google Map</button>
-           <!--<a href="#" class="btn btn-primary">Go to Reports</a>-->
+            <p class="card-text">View google map</p>
+            <button type="button" class="btn btn-primary" onclick="googleMap()">View</button>
+            <!--<a href="#" class="btn btn-primary">Go to Reports</a>-->
           </div>
         </div>
       </div>
@@ -95,16 +90,16 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="admin_validation.js"></script>
-<!-- Footer -->
-   
-			<footer class="bg-dark p-2 text-center">
-				<div class="container">
-					<div class="text-white mb-3 mb-md-0">
-						Copyright ©HoneyBee 2023. All rights reserved. Developed by Chamali Senanayake
-					</div>
-				</div>
-			</footer>
-    
+  <!-- Footer -->
+
+  <footer class="bg-dark p-2 text-center">
+    <div class="container">
+      <div class="text-white mb-3 mb-md-0">
+        Copyright©HoneyBee 2023. All rights reserved. Developed by Chamali Senanayake
+      </div>
+    </div>
+  </footer>
+
 
 </body>
 
